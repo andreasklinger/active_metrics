@@ -7,7 +7,7 @@ module ActiveMetrics
 
     def show
       ReportFile.load_file(params[:name])
-      @report = ReportFile.load("User Retention")
+      @report = ReportFile.load("FIXME")
       @report.generate
     end
   end

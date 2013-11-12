@@ -16,13 +16,11 @@ module ActiveMetrics
     def self.define(name, &block)
       report = Report.new name
       report.instance_eval &block
-      @reports[name] = report
-      puts @reports.inspect
+      @reports["FIXME"] = report
     end
 
     def self.load(name)
-      puts @reports.inspect
-      @reports[name]
+      @reports["FIXME"]
     end
   end
 end

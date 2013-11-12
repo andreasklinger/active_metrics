@@ -13,15 +13,14 @@ module ActiveMetrics
     end
 
     def generate
-      # segments = Segments.get(@segment)
-      # segments.map do |segment|
-      #   data = { segment: segment }
-      puts "cohorttable generate "
-        # @metrics.each do |m|
-        #   data[m] = Metrics.get(m)
-        # end
-      #   data
-      # end
+      segments = Segments.get(@segment)
+      segments.map do |segment|
+        data = { segment: segment }
+        @metrics.each do |m|
+          data[m] = Metrics.get(m,segment)
+        end
+        data
+      end
     end
   end
 end

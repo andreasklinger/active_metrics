@@ -9,9 +9,9 @@ module ActiveMetrics
       @builder.generate if @builder
     end
 
-    # def define_segment(name, &block)
-    #   @segments.add(name, &block)
-    # end
+    def define_segment(name, &block)
+      Segments.add(name, &block)
+    end
 
     def define_metric(name, &block)
       Metrics.add(name, &block)
