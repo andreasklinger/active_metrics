@@ -3,11 +3,9 @@ module ActiveMetrics
     def initialize(name)
       @name = name
       @builder = nil
-      puts " report class init"
     end
 
     def generate
-      puts "report generate"
       @builder.generate if @builder
     end
 

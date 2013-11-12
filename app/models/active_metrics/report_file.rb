@@ -9,7 +9,6 @@ module ActiveMetrics
       # TODO: don't simply load files by their name
       file = reports_path + name + ".rb"
       if File.exist? file
-        puts "lading report file"
         require_dependency file
       end
     end
@@ -18,12 +17,10 @@ module ActiveMetrics
       report = Report.new name
       report.instance_eval &block
       @reports[name] = report
-      puts "report define"
       puts @reports.inspect
     end
 
     def self.load(name)
-      puts "report load"
       puts @reports.inspect
       @reports[name]
     end
